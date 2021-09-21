@@ -17,21 +17,21 @@ namespace Assets.Scripts
 
         private void Awake()
         {
-
+            
             _dataPath = Application.persistentDataPath + "/Data.json";
             _selectedOptionsPath = Application.persistentDataPath + "/Optionses.json";
             
             LoadData();
             LoadSelectedOption();
             _indicatorPanel.ShowBestData(_bestData);
-            
+            Debug.Log(_dataPath);
            
         }
 
         private void LoadData()
         {
             if(File.Exists(_dataPath)) _bestData = JsonUtility.FromJson<Data>(File.ReadAllText(_dataPath));
-            else _bestData = new Data(1, 1);
+            else _bestData = new Data(0, 1);
         }
         
         public void SaveData(Data data)

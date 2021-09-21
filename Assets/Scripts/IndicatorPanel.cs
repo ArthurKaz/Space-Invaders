@@ -16,7 +16,7 @@ public class IndicatorPanel : MonoBehaviour
     public InformationViewer ShipHealth => _shipHealth;
     public DataProvider.Data GetData()
     {
-        return new DataProvider.Data(1, 1);
+        return new DataProvider.Data(_score.Info,_waves.Info);
     }
     public void AddScore()
     {
